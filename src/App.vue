@@ -1,31 +1,33 @@
 <script>
-import Projects from './components/Projects.vue'
+// import Projects from './components/Projects.vue'
 export default {
   components: {
-    Projects
+    // Projects
   }
 }
 </script>
 
 <template>
-  <div class="container">
-    <Projects></Projects>
-  </div>
+  <header>
+    <ul>
+      <li>
+        <router-link :to="{ name: 'home' }">HOME</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'about' }">CHI SONO</router-link>
+      </li>
+      <li>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+    <Router-View></Router-View>
+  </main>
+
+  <footer>
+    Qui sarà presente il footer
+  </footer>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
