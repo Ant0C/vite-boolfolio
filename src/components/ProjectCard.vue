@@ -15,13 +15,18 @@ export default {
     <div class="container">
         <ul>
             <li>
-                {{ projects.name }}
+                <router-link :to="{ name: 'projects.show', params: { slug: projects.slug } }">
+                    {{ projects.name }}
+                </router-link>
             </li>
             <li>
                 {{ projects.customer }}
             </li>
             <li>
                 {{ projects.description }}
+            </li>
+            <li>
+                {{ projects.slug }}
             </li>
         </ul>
     </div>

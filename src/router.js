@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/home.vue'
 import About from './pages/aboutus.vue'
 import Progetti from './pages/projects.vue'
+import ProjectsShow from './pages/projects.show.vue'
+
 
 
 const router = createRouter({
@@ -22,6 +24,12 @@ const router = createRouter({
             name: 'progetti',
             component: Progetti
         },
+        {
+            path: '/blog/:slug',
+            name: 'projects.show',
+            component: ProjectsShow,
+            props: true
+        }
     ],
 })
 
