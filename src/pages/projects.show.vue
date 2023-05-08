@@ -13,16 +13,17 @@ export default {
     methods: {
         fetchProjects() {
             console.log('chiamata partita')
-            axios.get('http://127.0.0.1:8000/api/projects/${this.slug}')
+            axios.get(`http://127.0.0.1:8000/api/projects/${this.slug}`)
                 .then(res => {
-                    //console.log(res)
-                    const { success, project } = res.data
+                    console.log(res)
+                    const { project, success } = res.data
 
                     if (success) {
                         this.project = project
                     } else {
                         console.log('Pagina non trovata')
                     }
+
                 })
                 .catch(err => {
                     console.log(err)
@@ -37,8 +38,19 @@ export default {
 
 <template>
     <div>
-        DATI DEL SINGOLO PROGETTO
+        <h1> {{ project.name }} </h1>
+    </div>
+    <div class="space">
+        {{ project.customer }}
+    </div>
+    <div>
+        <p>{{ project.description }}</p>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.space {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+</style>
